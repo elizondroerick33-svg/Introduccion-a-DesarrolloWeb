@@ -1,0 +1,7 @@
+<?php
+$pulgadas = $_REQUEST['pulgadas'];
+$centimetros = $pulgadas * 2.54;
+
+echo "Pulgadas: " . $pulgadas . "<br>";
+echo "Centímetros: " . $centimetros;
+?>

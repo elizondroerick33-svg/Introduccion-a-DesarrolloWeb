@@ -1,0 +1,12 @@
+<html>
+<head>
+    <title>Conversor de Pulgadas a Centímetros</title>
+</head>
+<body>
+    <form method="post" action="laboratorio1_pulgadas_a_cm.php">
+        Ingrese las pulgadas: <input type="text" name="pulgadas" id="pulgadas">
+        <br><br>
+        <input type="submit" value="Convertir">
+    </form>
+</body>
+</html>
