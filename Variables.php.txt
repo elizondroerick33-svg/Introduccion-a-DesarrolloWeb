@@ -1,6 +1,10 @@
 <?php
+// Práctica #3 - Variables
+// Se declaran dos variables tipo string (cadena de texto)
 $author1 = "John Doe";
 $author2 = "Max Mustermann";
+
+// Las variables se interpolan (insertan) dentro del texto usando comillas dobles
 echo "<h1>Hello World!</h1>
 <p>This dynamic web page was created by $author1 and $author2.</p>";
 ?>
