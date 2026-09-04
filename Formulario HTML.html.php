@@ -1,6 +1,7 @@
 <html>
 <head>
     <title>Formulario de entrada del dato</title>
+    <meta charset="UTF-8">
 </head>
 <body>
     <!-- Formulario que pide nombre y edad -->
@@ -15,14 +16,16 @@
     </form>
 
     <?php
-    if (isset($_REQUEST['nombre'])) {
-        $Nombre = $_REQUEST['nombre'];
+    if (isset($_REQUEST['nombre']) && $_REQUEST['nombre'] !== '') {
+        // htmlspecialchars evita inyección de HTML/JS (XSS) al mostrar el nombre
+        $Nombre = htmlspecialchars($_REQUEST['nombre'], ENT_QUOTES, 'UTF-8');
         echo "El nombre es: " . $Nombre . "<br>";
 
-        $Edad = $_POST["edad"];
+        // Se convierte a entero para comparar correctamente como número
+        $Edad = isset($_POST["edad"]) ? intval($_POST["edad"]) : null;
 
         // Se verifica si la edad fue ingresada y si es mayor a 18
-        if (isset($Edad) and $Edad > 18) {
+        if ($Edad !== null && $Edad > 18) {
             echo "usted puede votar en las próximas elecciones 2028";
         } else {
             echo "Usted no es mayor de edad";
